@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 RoboRAVE International Finals in China</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        },
+                        accent: '#f59e0b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23334155" fill-opacity="0.1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">R</div>
+                    <span class="font-bold text-xl tracking-tight text-slate-900">RoboRAVE <span class="text-brand-600">2026</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-slate-600 hover:text-brand-600 font-medium transition">About</a>
+                    <a href="#challenges" class="text-slate-600 hover:text-brand-600 font-medium transition">Challenges</a>
+                    <a href="#schedule" class="text-slate-600 hover:text-brand-600 font-medium transition">Schedule</a>
+                    <a href="#fees" class="text-slate-600 hover:text-brand-600 font-medium transition">Fees</a>
+                    <a href="#awards" class="text-slate-600 hover:text-brand-600 font-medium transition">Awards</a>
+                    <a href="https://shuju.itccc.org.cn/f/ZAMrDK" target="_blank" class="bg-brand-600 hover:bg-brand-700 text-white px-6 py-2.5 rounded-full font-semibold transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        Register Now
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-slate-600 hover:text-slate-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-50 rounded-md">About</a>
+                <a href="#challenges" class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-50 rounded-md">Challenges</a>
+                <a href="#schedule" class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-50 rounded-md">Schedule</a>
+                <a href="#fees" class="block px-3 py-2 text-base font-medium text-slate-600 hover:bg-slate-50 rounded-md">Fees</a>
+                <a href="https://shuju.itccc.org.cn/f/ZAMrDK" class="block w-full text-center mt-4 bg-brand-600 text-white px-4 py-3 rounded-lg font-bold">Register Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center pt-24 pb-12 lg:pt-32 lg:pb-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="text-white space-y-8">
+                    <div class="inline-block bg-brand-500/20 border border-brand-400/30 rounded-full px-4 py-1.5 text-brand-200 font-semibold text-sm mb-2 backdrop-blur-sm">
+                        <i class="far fa-calendar-alt mr-2"></i>February 26-27, 2026
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+                        2026 RoboRAVE<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-cyan-300">International Finals</span><br>
+                        in China
+                    </h1>
+                    
+                    <div class="space-y-4 text-slate-300 text-lg">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1.5 text-brand-400"></i>
+                            <span class="font-medium">Beijing National Speed Skating Oval "Ice Ribbon"</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-exclamation-circle mt-1.5 text-red-400"></i>
+                            <span class="font-bold text-white bg-red-500/20 px-2 py-0.5 rounded border border-red-500/30">Registration Deadline: January 15, 2026</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="https://shuju.itccc.org.cn/f/ZAMrDK" target="_blank" class="text-center bg-brand-600 hover:bg-brand-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition shadow-lg shadow-brand-900/50 hover:shadow-brand-600/50 hover:-translate-y-1">
+                            Register Team
+                        </a>
+                        <a href="#challenges" class="text-center bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg transition hover:-translate-y-1">
+                            View Challenges
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Video Content -->
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brand-600 to-cyan-400 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="video-container bg-slate-900 ring-1 ring-white/10">
+                        <iframe 
+                            src="https://www.youtube.com/embed/FMDA5gBmeoI?autoplay=1&mute=1&loop=1&playlist=FMDA5gBmeoI&controls=1&showinfo=0" 
+                            title="RoboRAVE Video" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="text-slate-400 text-sm font-medium"><i class="fas fa-play-circle mr-2 text-brand-400"></i>Watch the excitement from previous events</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section id="challenges" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Challenge Categories</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto text-lg">Diverse robotics challenges designed for students of all ages and skill levels.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card Template -->
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 overflow-hidden group">
+                    <div class="h-2 bg-brand-500 group-hover:bg-brand-400 transition"></div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 text-2xl mb-6">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">Catapult Challenge</h3>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>/</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>≤7 yo</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>Construction</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>Standard LEGO 9656 set</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 overflow-hidden group">
+                    <div class="h-2 bg-purple-500 group-hover:bg-purple-400 transition"></div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 text-2xl mb-6">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">Fun Building (Swift Stacker)</h3>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>/</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>≤7 yo</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>Construction</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>Standard LEGO 9686, LEGO WeDo set (45300), and SPIKE Essential set (45345)</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 overflow-hidden group">
+                    <div class="h-2 bg-blue-500 group-hover:bg-blue-400 transition"></div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 text-2xl mb-6">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">Robo Curling Challenge</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm uppercase tracking-wide">Junior</h4>
+                                <p class="text-sm text-slate-600">≤10 yo, Remote Control, No restrictions</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm uppercase tracking-wide">Senior</h4>
+                                <p class="text-sm text-slate-600">≤13 yo, Remote Control, No restrictions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 overflow-hidden group">
+                    <div class="h-2 bg-teal-500 group-hover:bg-teal-400 transition"></div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center text-teal-600 text-2xl mb-6">
+                            <i class="fas fa-maze"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">A-Maze-ing Challenge</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm uppercase tracking-wide">Junior</h4>
+                                <p class="text-sm text-slate-600">≤13 yo, Fully Autonomous, LEGO</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm uppercase tracking-wide">Senior</h4>
+                                <p class="text-sm text-slate-600">≤18 yo, Fully Autonomous, No restrictions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 overflow-hidden group">
+                    <div class="h-2 bg-red-500 group-hover:bg-red-400 transition"></div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-red-600 text-2xl mb-6">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">SumoBot Challenge</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm uppercase tracking-wide">LEGO 1Kg</h4>
+                                <p class="text-sm text-slate-600">≤13 yo, Fully Autonomous, LEGO</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm uppercase tracking-wide">LEGO 1.5Kg</h4>
+                                <p class="text-sm text-slate-600">≤18 yo, Fully Autonomous, LEGO</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm uppercase tracking-wide">Open 1.5Kg</h4>
+                                <p class="text-sm text-slate-600">≤18 yo, Fully Autonomous, No restrictions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 overflow-hidden group">
+                    <div class="h-2 bg-orange-500 group-hover:bg-orange-400 transition"></div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center text-orange-600 text-2xl mb-6">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">Line Following Challenge</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm uppercase tracking-wide">Junior Spike</h4>
+                                <p class="text-sm text-slate-600">≤13 yo, Fully Autonomous, LEGO Spike 45678</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm uppercase tracking-wide">Junior LEGO</h4>
+                                <p class="text-sm text-slate-600">≤13 yo, Fully Autonomous, LEGO</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm uppercase tracking-wide">Junior Open</h4>
+                                <p class="text-sm text-slate-600">≤13 yo, Fully Autonomous, No restrictions</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-800 text-sm uppercase tracking-wide">Senior Open</h4>
+                                <p class="text-sm text-slate-600">≤18 yo, Fully Autonomous, No restrictions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 overflow-hidden group">
+                    <div class="h-2 bg-indigo-500 group-hover:bg-indigo-400 transition"></div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 text-2xl mb-6">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">Entrepreneur Challenge</h3>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>/</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>≤18 yo</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>No restrictions</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 overflow-hidden group">
+                    <div class="h-2 bg-cyan-500 group-hover:bg-cyan-400 transition"></div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center text-cyan-600 text-2xl mb-6">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">AlpinBot Challenge</h3>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>/</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>≤18 yo</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>Fully Autonomous</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>No restrictions</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-slate-100 overflow-hidden group">
+                    <div class="h-2 bg-rose-500 group-hover:bg-rose-400 transition"></div>
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-rose-50 rounded-xl flex items-center justify-center text-rose-600 text-2xl mb-6">
+                            <i class="fas fa-fire-extinguisher"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">Fire Fighting Challenge</h3>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>/</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>≤18 yo</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>Fully Autonomous</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check text-green-500 mt-1"></i> <span>No restrictions</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Event Schedule</h2>
+                <p class="text-slate-600">Find your challenge timeline below.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Schedule A -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                    <div class="mb-6">
+                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Schedule A</span>
+                        <h3 class="text-lg font-bold text-slate-900 mt-2">Catapult & Fun Builder</h3>
+                    </div>
+                    <div class="space-y-4 relative before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-200">
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-blue-500 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">09:00 - 09:30</span>
+                            <span class="text-sm text-slate-600">Entry</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-blue-500 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">09:30 - 10:00</span>
+                            <span class="text-sm text-slate-600">Opening Ceremony</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-blue-500 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">10:00 - 12:00</span>
+                            <span class="text-sm text-slate-600">Seeding</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-slate-300 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">12:00 - 14:00</span>
+                            <span class="text-sm text-slate-600">Lunch Break</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-blue-500 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">14:00 - 15:00</span>
+                            <span class="text-sm text-slate-600">Tournament</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-amber-500 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">15:00 - 16:00</span>
+                            <span class="text-sm text-slate-600">Award Ceremony</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Schedule B -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                    <div class="mb-6">
+                        <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Schedule B</span>
+                        <h3 class="text-lg font-bold text-slate-900 mt-2">Main Competitions</h3>
+                        <p class="text-xs text-slate-500 mt-1">RoboCurling, SumoBot, a-MAZE-ing, Line Following, AlpinBot, Fire Fighting</p>
+                    </div>
+                    <div class="space-y-4 relative before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-200">
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-indigo-500 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">09:00 - 09:30</span>
+                            <span class="text-sm text-slate-600">Entry</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-indigo-500 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">09:30 - 10:00</span>
+                            <span class="text-sm text-slate-600">Opening Ceremony</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-indigo-500 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">10:00 - 12:00</span>
+                            <span class="text-sm text-slate-600">Seeding</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-slate-300 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">12:00 - 14:00</span>
+                            <span class="text-sm text-slate-600">Lunch Break</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-indigo-500 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">14:00 - 15:00</span>
+                            <span class="text-sm text-slate-600">Seeding</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-indigo-500 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">15:00 - 16:00</span>
+                            <span class="text-sm text-slate-600">Tournament</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-amber-500 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">16:00 - 17:00</span>
+                            <span class="text-sm text-slate-600">Award Ceremony</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Schedule C -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                    <div class="mb-6">
+                        <span class="bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Schedule C</span>
+                        <h3 class="text-lg font-bold text-slate-900 mt-2">Entrepreneur Challenge</h3>
+                    </div>
+                    <div class="space-y-4 relative before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-200">
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-teal-500 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">09:00 - 09:30</span>
+                            <span class="text-sm text-slate-600">Entry</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-teal-500 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">09:30 - 10:00</span>
+                            <span class="text-sm text-slate-600">Opening Ceremony</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-teal-500 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">10:00 - 12:00</span>
+                            <span class="text-sm text-slate-600">Public Roadshow</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-slate-300 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">12:00 - 14:00</span>
+                            <span class="text-sm text-slate-600">Lunch Break</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-teal-500 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">14:00 - 15:00</span>
+                            <span class="text-sm text-slate-600">Public Roadshow</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-teal-500 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">15:00 - 16:00</span>
+                            <span class="text-sm text-slate-600">Result publishes</span>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-amber-500 border-4 border-white"></div>
+                            <span class="block text-sm font-bold text-slate-900">16:00 - 17:00</span>
+                            <span class="text-sm text-slate-600">Award Ceremony</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Fees Section -->
+    <section id="fees" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Registration Fees</h2>
+                <p class="text-slate-400">Clear and transparent pricing for all participants.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Player Fee -->
+                <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">PARTICIPANT</div>
+                    <h3 class="text-2xl font-bold mb-2">Player Fee</h3>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-4xl font-extrabold text-white">700</span>
+                        <span class="text-xl text-slate-400 ml-2">CNY / team</span>
+                    </div>
+                    <ul class="space-y-3 text-slate-300 mb-8">
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-500 mt-1"></i> Registration fee</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-500 mt-1"></i> Digital certificate & Medal</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-500 mt-1"></i> Trophy (for winners)</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-500 mt-1"></i> Custom short-sleeved shirt</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-500 mt-1"></i> Souvenir</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-500 mt-1"></i> Ice Ribbon ticket</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-brand-500 mt-1"></i> Event day lunch</li>
+                    </ul>
+                    <a href="https://shuju.itccc.org.cn/f/ZAMrDK" class="block w-full text-center bg-brand-600 hover:bg-brand-500 text-white font-bold py-3 rounded-xl transition">Register Team</a>
+                </div>
+
+                <!-- Adult/Coach Fee -->
+                <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700">
+                    <h3 class="text-2xl font-bold mb-2">Team Leader / Coach / Parent</h3>
+                    <div class="flex items-baseline mb-6">
+                        <span class="text-4xl font-extrabold text-white">FREE</span>
+                    </div>
+                    <div class="space-y-6 text-slate-300">
+                        <div>
+                            <h4 class="font-bold text-white mb-2 flex items-center gap-2"><i class="fas fa-ticket-alt text-amber-500"></i> Venue Entry</h4>
+                            <p class="text-sm text-slate-400">Entry to Ice Ribbon venue requires a ticket, but registered individuals with a badge can enter for free.</p>
+                        </div>
+                        
+                        <div class="bg-slate-700/50 rounded-xl p-4 border border-slate-600">
+                            <h4 class="font-bold text-white mb-1 flex items-center gap-2"><i class="fas fa-utensils text-brand-400"></i> Lunch Add-on</h4>
+                            <div class="flex items-baseline mb-2">
+                                <span class="text-2xl font-bold text-white">50</span>
+                                <span class="text-sm text-slate-400 ml-1">CNY / meal</span>
+                            </div>
+                            <ul class="text-sm text-slate-400 space-y-1">
+                                <li>• For adults (team leaders, coaches, parents)</li>
+                                <li>• Purchase in advance (no on-site purchase)</li>
+                                <li>• Purchased collectively by organization/school</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Awards & Recognition</h2>
+                <p class="text-slate-600">Celebrating excellence in robotics and engineering.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-yellow-100 text-center relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-yellow-400"></div>
+                    <i class="fas fa-trophy text-5xl text-yellow-400 mb-4"></i>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Gold Prize</h3>
+                    <p class="text-yellow-600 font-semibold mb-4">1 Team</p>
+                    <p class="text-slate-500 text-sm">Certificate, Medal, Trophy</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 text-center relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-slate-400"></div>
+                    <i class="fas fa-trophy text-5xl text-slate-400 mb-4"></i>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Silver Prize</h3>
+                    <p class="text-slate-600 font-semibold mb-4">1 Team</p>
+                    <p class="text-slate-500 text-sm">Certificate, Medal, Trophy</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-orange-100 text-center relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-orange-700"></div>
+                    <i class="fas fa-trophy text-5xl text-orange-700 mb-4"></i>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Bronze Prize</h3>
+                    <p class="text-orange-800 font-semibold mb-4">1 Team</p>
+                    <p class="text-slate-500 text-sm">Certificate, Medal, Trophy</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-slate-100 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 font-bold text-lg">1st</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">First Prize (30%)</h4>
+                        <p class="text-sm text-slate-500">Certificate, Medal</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-100 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 font-bold text-lg">2nd</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Second Prize (40%)</h4>
+                        <p class="text-sm text-slate-500">Certificate, Medal</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-100 flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 font-bold text-lg">3rd</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900">Third Prize (30%)</h4>
+                        <p class="text-sm text-slate-500">Certificate, Medal</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-blue-50 border border-blue-100 rounded-lg p-4 text-sm text-blue-800 flex items-start gap-3">
+                <i class="fas fa-info-circle mt-0.5"></i>
+                <p>Note: First prize count includes Gold, Silver, and Bronze prize. If fewer than 10 teams participate in a challenge division, first prize will be vacant, and second and third prizes will be awarded proportionally.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-6">Contact Us</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-brand-400">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-400">International Liaison</p>
+                                <p class="text-white font-medium">Chen Zhengrong (Fred)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-brand-400">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-400">Email</p>
+                                <a href="mailto:chenzhengrong@itccc.org.cn" class="text-white font-medium hover:text-brand-400 transition">chenzhengrong@itccc.org.cn</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-brand-400">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-400">Phone / WeChat / WhatsApp</p>
+                                <p class="text-white font-medium">+86 13601217230</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-brand-600 to-cyan-600 rounded-2xl p-8 text-center text-white shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-4">Ready to Compete?</h3>
+                    <p class="mb-8 text-brand-100">Join teams from around the world at the Ice Ribbon in Beijing.</p>
+                    <a href="https://shuju.itccc.org.cn/f/ZAMrDK" target="_blank" class="inline-block bg-white text-brand-600 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-slate-50 transition transform hover:-translate-y-1">
+                        Register Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 mt-16 pt-8 text-center text-sm text-slate-500">
+                <p>&copy; 2026 RoboRAVE International Finals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
